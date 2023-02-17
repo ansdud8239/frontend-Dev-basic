@@ -30,16 +30,23 @@ input {
 input[type='password'] {
 	margin-top: 10px;
 }
+input[type="text"].focused{
+	border-color: #2a00e6;
+	background-color: #e1e6f6;
+}
 </style>
 <script>
-	function focused(){
-		console.log("클릭");
+	function focused(element){
+		element.className="focused";
+	}
+	function blured(element){
+		element.className="";
 	}
 </script>
 </head>
 <body>
 	<form>
-		<input type="text" onfocus='focused()' placeholder="이메일" value="">
+		<input type="text" onfocus='focused(this)' onblur="blured(this)" placeholder="이메일" value="" class="">
 		<input type="password" placeholder="비밀번호" value="">
 	</form>
 </body>
