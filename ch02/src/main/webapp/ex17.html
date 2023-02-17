@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "맑은 고딕", "돋음";
+	font-size: 12px;
+}
+
+form {
+	width: 182px;
+	border: 1px solid #555;
+	padding:10px;
+	margin:100px auto 0px auto;
+}
+input {
+	display:block;
+	padding: 5px;
+	outline: none;
+	background-color: #fff;
+	boarder:2px solid #aaa;
+}
+input[type='password'] {
+	margin-top: 10px;
+}
+</style>
+<script>
+	function focused(){
+		console.log("클릭");
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="text" onfocus='focused()' placeholder="이메일" value="">
+		<input type="password" placeholder="비밀번호" value="">
+	</form>
+</body>
+</html>
