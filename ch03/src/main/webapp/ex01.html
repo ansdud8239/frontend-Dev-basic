@@ -19,7 +19,6 @@ body {
 	border: 1px solid #666;
 	width: 300px;
 	background-color: #FFC;
-	
 	padding-top: 10px;
 	padding-right: 20px;
 	padding-bottom: 30px;
@@ -27,7 +26,6 @@ body {
 	padding: 10px 20px 30px 40px; /* T R B L */
 	padding: 10px 20px 30px; /* T (R,L) B */
 	padding: 10px 20px; /* (T,B) (R,L) */
-	
 	margin-top: 10px;
 	margin-right: 20px;
 	margin-bottom: 30px;
@@ -35,13 +33,41 @@ body {
 	margin: 100px; /* (T, R, B, L)*/
 	margin: 100px auto; /* (T, R) (B, L)*/
 	margin: 100px auto 300px; /* T (R,L) B */
-	margin: 100px auto 300px; /* T (R,L) B */
 	margin: 100px auto 300px auto; /* T R B L */
 }
 </style>
 </head>
+<script>
+	i = 10;
+	// 함수 리터럴
+	f = function() {
+		console.log("time out");
+	}
+	// 실행
+	//f();
+	window.onload = function() {
+		elDiv = document.getElementById("myBox");
+		//console.log(this);
+		elDiv.onclick = function() { 
+			marginTop = parseInt(this.style.marginTop);
+			// setInterval : 주어진 시간뒤에 반복적으로 실행
+			// setTimeout : 주어진 시간 뒤에 한번 실행
+			intervalId = setInterval(function() {
+				if (marginTop <= -80) {
+					// Interval 함수 종료
+					clearInterval(intervalId);
+					return;
+				}
+				marginTop -= 10;
+				elDiv.style.marginTop = marginTop+"px";
+				console.log(marginTop);
+			}, 10);
+		}
+	}
+	//window.onload=f;
+</script>
 
 <body>
-	<div class="box1" style="margin-top: -10px;">CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.</div>
+	<div class="box1" id="myBox" style="margin-top: 100px">CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.</div>
 </body>
 </html>
