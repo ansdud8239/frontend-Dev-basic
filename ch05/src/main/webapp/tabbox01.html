@@ -3,24 +3,31 @@
 <head>
 <meta charset="utf-8">
 <title>리스트를 이용한 메뉴 만들기</title>
+<link rel="stylesheet" type="text/css" href="/ch05/css/tabbox.css" />
 <style type="text/css">
-*						{ margin:0; padding:0 }
-body					{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
 </style>
-<script src="" type="text/javascript"></script>
+<script>
+liSelected = null;
+function onTabClicked(li){
+	if(liSelected != null){
+		liSelected.className="";
+	}
+	li.className="selected";
+	liSelected = li;
+		
+}
+</script>
 </head>
 <body>
-<div class="tab-box">
-	<ul>
-        <li>메뉴 1</li>
-        <li>메뉴 2</li>
-        <li>메뉴 3</li>
-        <li>메뉴 4</li>
-        <li>메뉴 5</li>
-    </ul>
-    <div>
-    	탭뷰입니다.
-    </div>
-</div>    
+	<div class="tab-box">
+		<ul>
+			<li onclick="onTabClicked(this)">메뉴 1</li>
+			<li onclick="onTabClicked(this)">메뉴 2</li>
+			<li onclick="onTabClicked(this)">메뉴 3</li>
+			<li onclick="onTabClicked(this)">메뉴 4</li>
+			<li onclick="onTabClicked(this)">메뉴 5</li>
+		</ul>
+		<div>탭뷰입니다.</div>
+	</div>
 </body>
 </html>
