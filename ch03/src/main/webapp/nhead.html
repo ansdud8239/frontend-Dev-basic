@@ -14,18 +14,131 @@ body {
 	font-size: 12px;
 	color: #333;
 }
-.logo {
+
+.header {
+	width: 830px;
+	height: 100px;
+	margin: 50px auto;
+}
+
+.header .logo, .header .search-box {
+	float: left;
+}
+
+.header .logo {
 	width: 222px;
 	height: 52px;
-	font-size:0;
-	overflow:hidden;
-	background-color: #ddd;
-	margin: 100px auto;
-	background: url('/ch03/images/naver.png') no-repeat 0px -158px
+	
+	font-size: 0;
+	overflow: hidden;
+	background: url('/ch03/images/naver.png') no-repeat 0px -158px/442px 428px;
+
+}
+
+.search-box a, .search-box input, .search-box .btn-search button {
+	display: block;
+}
+
+.search-box {
+	width: 582px;
+	height: 52px;
+	
+	border: 2px solid #19ce60;
+	border-radius: 2px;
+	
+	background-color: white;
+	
+	margin-left: 20px;
+}
+
+.search-box input {
+	float: left;
+	
+	width: 432px;
+	height: 24px;
+	
+	padding: 13px 15px;
+	margin: 1px;
+	
+	font-size: 18px;
+	font-weight: 700;
+	
+	outline: 0;
+
+	border: none;
+}
+
+.search-box #drop {
+	float: right;
+	width: 22px;
+	height: 52px;
+	font-size: 0;
+	overflow: hidden;
+}
+
+.search-box #drop span {
+	display: inline-block;
+	margin: 22px 6px;
+	width: 10px;
+	height: 12px;
+	background: url('/ch03/images/naver.png') no-repeat -158px -151px/442px
+		428px;
+}
+
+.search-box #keyboard {
+	float: right;
+	width: 36px;
+	right: 64px;
+	height: 100%;
+	font-size: 0;
+	overflow: hidden;
+}
+
+.search-box #keyboard span {
+	display: inline-block;
+	width: 20px;
+	height: 12px;
+	margin: 20px 7px;
+	background: url('/ch03/images/naver.png') no-repeat -398px -267px/442px
+		428px;
+}
+
+.search-box .btn-search {
+	float: right;
+	width: 56px;
+	height: 100%;
+	background-color: #19ce60;
+	border-radius: 0 2px 2px 0;
+}
+
+.search-box .btn-search button {
+	width: 22px;
+	height: 22px;
+	font-size: 0;
+	overflow: hidden;
+	background: url('/ch03/images/naver.png') no-repeat -420px -24px/442px
+		428px;
+	margin: 16px;
+	border: none;
+	overflow: hidden;
 }
 </style>
 </head>
 <body>
-	<h1 class="logo">네이버</h1>
+	<div class="header">
+		<h1 class="logo">네이버</h1>
+		<div class="search-box">
+			<div class="btn-search">
+				<button>검색</button>
+			</div>
+			<a id="drop" href="#">
+				<span>드롭다운</<span>
+			</a>
+			<a id="keyboard" href="#">
+				<<span>>키보드</<span> 
+			</a>
+			<input type="text" />
+		</div>
+	</div>
 </body>
 </html>
