@@ -3,15 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <script>
-window.n='둘리';
-console.log(window.n,n);
-
-var email = "dooly@gmail.com";
-console.log(window.email,email);
+window.n = '둘리';
+console.log(window.n, n);
+var email = 'dooly@gmail.com';
+console.log(window.email, email);
 
 setTimeout(function(){
-	var child = window.open("/ch06/popup.html","popup","width=600,height=400");
-},2000)
+	var child = window.open("popup.html", "n-popup", "width=600, height=400");
+	
+	setTimeout(function(){
+		// 자식창의 내용 바꾸기
+		child.document.write("<h1>popup contents changed!</h1>");
+	}, 2000);
+	
+	setTimeout(function(){
+		// 자식창 움직이기
+		child.moveTo(200, 200);
+	}, 4000);
+	
+}, 2000);
 </script>
 </head>
 <body>
@@ -20,8 +30,8 @@ setTimeout(function(){
 	<h2>1. window 전역 객체(Global Object)</h2>
 	<ul>
 		<li>자바스크립트가 브라우저 창(window)을 제어하기 위한 객체</li>
-		<li>자바스크립트 실행과 관련된 환경 정보에 접근이 가능한 객체(Environments, Variable Object)</li>
+		<li>자바스크립트 실행과 관련된 환경 정보에 접근이 가능한 객체(Environments, Variable Object)</li>		
 	</ul>
 </body>
 </body>
-</html>
+</html> 
