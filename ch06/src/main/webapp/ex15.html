@@ -3,18 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	/*
+	 기본 이벤트 동작 막기
+	 1. anchor : 버튼이나 메뉴로 사용할 때
+	 2. form : validation,ajax 방식의 post submit
+	 */
+window.addEventListener("load", function() {
+	document.getElementById('form-login')
+	.addEventListener('submit',function(event) {
+		event.preventDefault();
+		var inputEmail = document.getElementById('input-email');
+		if (inputEmail.value == '') {
+			alert('이메일이 비어있습니다.');
+			inputEmail.focus;
+			return;
+		}
+		var inputPassword = document.getElementById('input-password');
+		if (inputPassword.value == '') {
+			alert('비밀번호가 비어있습니다.');
+			inputPassword.focus;
+			return;
+		}
+		// flase이면 이동하지 않음
+		this.submit();
+	});
+});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
 	<h2>6. 기본(default) Event Hanlder 동작 막기 - 2. form: DOM Event Model Level2</h2>
-	
-	<form id='form-login' method='post' action='/user/auth'>
-		<input type='text' name='email' id='input-email' placeholder='이메일'/>
-		<br/><br/>
 
-		<input type='password' name='password' id='input-password' placeholder='비밀번호'/>
-		<br/><br/>
-		
+	<form id='form-login' method='post' action='/user/auth'>
+		<input type='text' name='email' id='input-email' placeholder='이메일' />
+		<br />
+		<br />
+
+		<input type='password' name='password' id='input-password' placeholder='비밀번호' />
+		<br />
+		<br />
+
 		<input type='submit' value='로그인' />
 	</form>
 </body>
