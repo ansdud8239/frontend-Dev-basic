@@ -7,15 +7,21 @@
 <style type="text/css">
 </style>
 <script>
+
+var onTabClicked = function(){
+	var liSelected = document.querySelector('li.selected');
+	liSelected && (liSelected.className='');
+
+	this.className="selected";
+		
+}
 window.addEventListener('load',function(){
 	var divTabBox = document.getElementsByClassName("tab-box")[0];
 	var ul = divTabBox.childNodes[1];
 	var lis = ul.getElementsByTagName("li");
 	
-	Array.prototype.forEach.call(lis,function(){
-		li.addEventListener('click',function(){
-			
-		});
+	Array.prototype.forEach.call(lis,function(li){
+		li.addEventListener('click',onTabClicked);
 	});
 });
 </script>
@@ -23,7 +29,7 @@ window.addEventListener('load',function(){
 <body>
 	<div class="tab-box">
 		<ul>
-			<li">메뉴 1</li>
+			<li>메뉴 1</li>
 			<li>메뉴 2</li>
 			<li>메뉴 3</li>
 			<li>메뉴 4</li>

@@ -2,8 +2,35 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 소스버전(애플리케이션 서버 호스팅) -->
+<!-- script src='/ch07/js/jquery/jquery-3.6.3.js'></script> -->
+
+<!-- 압축버전(애플리케이션 서버 호스팅) -->
+<!--<script src='/ch07/js/jquery/jquery-3.6.3.min.js'></script> -->
+
+<!-- 소스버전(CDN 호스팅) -->
+<!-- <script src='https://code.jquery.com/jquery-3.6.3.js'></script> -->
+
+<!-- 압축버전(CDN 호스팅) -->
+<script src='https://code.jquery.com/jquery-3.6.3.min.js'></script> 
+
+<script>
+console.log(jQuery().jquery,$().jquery);
+
+window.addEventListener('load',function(){
+	setTimeout(function(){
+		//jQery Object
+		var $obj = jQuery('h1');
+		$obj.css('color','red');
+	},1000);
+	
+	console.log(typeof(jQuery),typeof($obj),"length:"+$obj.length,$obj instanceof Array);
+	
+});
+</script>
 </head>
 <body>
+	<h1>jQuery 로딩</h1>
 	<h1>jQuery 로딩</h1>
 </body>
 </html>
