@@ -26,6 +26,25 @@ li.on	{ background-color:#287FC2; color:#fff }
 <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(function(){
+	$("ul li")
+		.mouseover(function(){	
+			$(this).addClass("on");
+			/*
+			$(this).css({
+				backgroundColor:"#287FC2",
+				color:"#fff"
+				});
+			*/
+		})
+		.mouseout(function(){
+			$(this).removeClass("on");
+			/*
+			$(this).css({
+				backgroundColor:"#fff",
+				color:"#333"
+				});
+			*/
+		});
 });  
 </script>
 </head>

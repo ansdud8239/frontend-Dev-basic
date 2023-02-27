@@ -4,10 +4,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript">
-$(function() {
-	setTimeout(function(){
-	}, 2000);
-});  
+	$(function() {
+		setTimeout(function() {
+			/*
+			$("h2 a").attr("href","https://www.douzone.com");
+			// 새 페이지
+			$("h2 a").attr("target","_blank");
+			$("h2 a").attr("title","우리회사");
+			$("h2 a").css("font-size","0.75em");
+			 */
+
+			//함수 체인
+			/*
+			$("h2 a").attr("href", "https://www.douzone.com")
+				.attr("target","_blank")
+				.attr("title", "우리회사")
+				.css("font-size", "0.75em");
+			 */
+			$("h2 a").attr({
+					href: "https://www.douzone.com",
+					target:"_blank",
+					title: "우리회사"
+				})
+			.css("font-size", "0.75em");
+		}, 2000);
+	});
 </script>
 </head>
 <body>

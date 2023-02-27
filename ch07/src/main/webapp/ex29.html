@@ -6,6 +6,11 @@
 <script type="text/javascript">
 $(function() {
 	setTimeout(function(){
+		$("h2, p").wrapAll("<div>")
+		.parent().css({
+			border:"5px solid #ccc",
+			width : "200px",
+			padding : "10px"}); //traverse API
 	}, 2000);
 });  
 </script>
