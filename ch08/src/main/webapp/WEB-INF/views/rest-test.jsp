@@ -33,6 +33,63 @@ $(function(){
 		});
 		
 	});
+	
+	$("#read").click(function(){
+		$.ajax({
+			url:"${pageContext.request.contextPath }/api/user/10",
+			async:true,
+			type:"get",
+			dataType:"json",
+			success:function(response){
+				console.log(response);
+			},
+			error:function(xhr,status,error){
+				console.error(status,error);
+			}
+		});
+		
+	});
+	$("#update").click(function(){
+		var vo={
+				name:"조문영",
+				password:"12345",
+				gender:"female"
+			};
+		$.ajax({
+			url:"${pageContext.request.contextPath }/api/user/10",
+			async:true,
+			type:"put",
+			dataType:"json",
+			contentType:"application/json",
+			data:JSON.stringify(vo),
+			success:function(response){
+				console.log(response);
+			},
+			error:function(xhr,status,error){
+				console.error(status,error);
+			}
+		});
+		
+	});
+	$("#delete").click(function(){
+		$.ajax({
+			url:"${pageContext.request.contextPath }/api/user/10",
+			async:true,
+			type:"delete",
+			dataType:"json",
+			contentType:"application/x-www-form-urlencoded",
+			data:"password=1234",
+			success:function(response){
+				console.log(response);
+			},
+			error:function(xhr,status,error){
+				console.error(status,error);
+			}
+		});
+		
+	});
+	
+	
 });
 </script>
 </head>
