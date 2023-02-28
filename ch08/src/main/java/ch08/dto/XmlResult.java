@@ -2,7 +2,6 @@ package ch08.dto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-import ch08.vo.GuestbookVo;
 
 @XmlRootElement(name="response")
 public class XmlResult {
@@ -10,6 +9,9 @@ public class XmlResult {
 	private GuestbookVo data; // if success, set
 	private String message; // if fail, set
 	
+	public XmlResult() {
+		
+	}
 	private XmlResult(GuestbookVo data) {
 		this.result = "success";
 		this.data = data;
@@ -18,18 +20,27 @@ public class XmlResult {
 		this.result = "fail";
 		this.message = message;
 	}
+
+	
+	
 	public String getResult() {
 		return result;
 	}
-
-	public Object getData() {
+	public void setResult(String result) {
+		this.result = result;
+	}
+	public GuestbookVo getData() {
 		return data;
 	}
-
+	public void setData(GuestbookVo data) {
+		this.data = data;
+	}
 	public String getMessage() {
 		return message;
 	}
-	
+	public void setMessage(String message) {
+		this.message = message;
+	}
 	public static XmlResult success(GuestbookVo data) {
 		return new XmlResult(data);
 	}

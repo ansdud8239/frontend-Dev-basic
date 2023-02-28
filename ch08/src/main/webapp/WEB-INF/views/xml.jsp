@@ -11,13 +11,43 @@
 <script>
 $(function(){
 	$("button").click(function(){
-		$("#data").load("${pageContext.request.contextPath }/api/html h1");
+		$.ajax({
+			url : "${pageContext.request.contextPath }/api/xml",
+			async:true,
+			type:"get",
+			dataType:"xml",
+			success:function(response){
+				//console.log(response);
+				var $data = $("data",response);
+				var $name = $("name",$data);
+				var $no = $("no",$data);
+				var $message = $("message",$data);
+				var $result = $("result",response);
+				
+				if($result==="fail"){
+					console.error(response.message);
+					return;
+				}
+				
+				var htmls = "";
+				htmls += ("<h3>"+$no.text()+"</h3>");
+				htmls += ("<h34>"+$name.text()+"</h4>");
+				htmls += ("<h5>"+$message.text()+"</h5>");
+				$("#data").html(htmls);
+			},
+			error:function(xhr,status,error){
+				console.error(status,error);
+			}
+		});
 	});
 })
 </script>
 
 </head>
 <body>
-
+	<h1>ajax test : xml format data </h1>
+	
+	<button>데이터 가져오기</button>
+	<div id="data"></div>
 </body>
 </html>
