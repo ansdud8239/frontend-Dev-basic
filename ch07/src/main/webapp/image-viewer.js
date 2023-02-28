@@ -1,25 +1,21 @@
 var ImageViewer = {
 	init: function() {
-		$(ImageViewer._changeBtnClick);
-		$(ImageViewer._slideshowBtnClick);
-		$(ImageViewer._imgClick);
-		
-	},
-	_changeBtnClick: function() {
 		$("#btn-change").click(ImageViewer._changeImage);
+		$("#btn-slideshow").click(ImageViewer._setInterval);
+		$("img").click(ImageViewer._changeImage);
+		
 	},
 	_changeImage: function() {
 		var index = Math.floor(Math.random() * ImageViewer._images.length);
 		if (index != ImageViewer._tmp) {
 			ImageViewer._tmp = index;
-			$("img").attr("src", "images/" + ImageViewer._images[index].file);
-			$("img").attr("title", ImageViewer._images[index].name);
+			$("img").attr({
+				src: "images/" + ImageViewer._images[index].file,
+				title:"ImageViewer._images[index].name"
+			});
 		} else {
 			ImageViewer._changeImage();
 		}
-	},
-	_slideshowBtnClick: function() {
-		$("#btn-slideshow").click(ImageViewer._setInterval);
 	},
 	_setInterval: function() {
 		if (ImageViewer._intervalId == null) {
@@ -27,9 +23,6 @@ var ImageViewer = {
 		} else {
 			clearInterval(ImageViewer._intervalId);
 		}
-	},
-	_imgClick:function(){
-		$("img").click(ImageViewer._changeImage);
 	},
 	_tmp: null,
 	_intervalId: null,
