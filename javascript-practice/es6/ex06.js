@@ -90,7 +90,7 @@ console.log("Colors of Rainbow",rainbow);
 
 console.log("Colors of Rainbow",...rainbow);
 
-//ex10 - 배열의 구조분해: ... array spread operator 함수의 파라미터로 사용하기
+//ex10 - 배열의 구조분해: ... array spread operator 함수의 파라미터로 사용하기(arguments대용)
 // "red orange yellow"
 // var f = function(...colors){
 //     return colors.join(' ');
@@ -100,3 +100,5 @@ console.log("Colors of Rainbow",...rainbow);
 const s = ((...colors) => color.join(' '))('red','orange','yellow');
 
 console.log(s);
+
+

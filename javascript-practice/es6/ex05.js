@@ -40,7 +40,8 @@ const dooly = {
     friends: ['또치','마이콜','도우너','길동'],
     printFriends: function(){
         //console.log(this);
-        this.friends.forEach(function(f){
+        this.friends.forEach((f)=>{
+            //console.log(this); // global
             console.log(`${this.name}의 친구 ${f}`);
         })
     }
