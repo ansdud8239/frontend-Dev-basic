@@ -20,9 +20,7 @@ var render = function(vo){
 	$("#list-guestbook").prepend(htmls);
 }
 $(function(){
-	console.log("bbb");
 	$("#add-form").submit(function(event){
-		console.log("aaa");
 		event.preventDefault();
 		// form serialization
 		// json으로 가능
