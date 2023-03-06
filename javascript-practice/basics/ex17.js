@@ -19,7 +19,7 @@ var yourObject = {
     v:'you'
 }
 // 일반적인 개체의 함수 호출
-myObject.f1();
+myObject.f1(); 
 
 // apply : 호출되는 함수의 this 파라미터로 전달된 객체로 바꾼다.
 myObject.f1.apply(yourObject);
