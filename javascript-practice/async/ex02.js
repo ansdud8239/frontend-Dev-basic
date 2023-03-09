@@ -22,16 +22,22 @@ myAsyncFn02("data").then(function(result){
     console.log(result);
 });
 // test02: fail
-myAsyncFn02("").catch(function(error){
+myAsyncFn02("").catch(function(error){async #1
     console.error(error);
 });
 */
-myAsyncFn02("data")
-    .then(function(result){
-        console.log(result);
-    })
-    .catch(function(error){
-         console.error(error);
-    });
-    
-console.log("wait.........");
+
+if(require.main == module){
+    myAsyncFn02("data")
+        .then(function(result){
+            console.log(result);
+        })
+        .catch(function(error){
+            console.error(error);
+        });
+
+    console.log("wait.........");
+}else{
+    module.exports = myAsyncFn02;
+}
+
